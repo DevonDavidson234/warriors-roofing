@@ -10,8 +10,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkred;">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand">
-                    <img src="roofinglogo.png" alt="Warriors Roofing" style="height: 50px;">
-                    Warriors Roofing
+                    <img src="images/roofinglogo.png" alt="Warriors Roofing" style="height: 50px;">
+                    
                 </a>
                 <div class="navbar-nav justify-content-end">
                     <a href="index.html" class="nav-link">Home</a>
@@ -21,11 +21,32 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid" style="width: max-content; margin-top: 20em;">
-            <h1>Coming soon</h1>
+        <div class="container-fluid border p-3" style="width: max-content; margin-top: 20em;">
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="length" class="form-label">Length of Roof (ft.)</label>
+                  <input type="text" class="form-control" id="length">
+                </div>
+                <div class="col-md-6">
+                  <label for="width" class="form-label">Width of Roof (ft.)</label>
+                  <input type="text" class="form-control" id="width">
+                </div>
+                <div class="col-12">
+                  <label for="pitch" class="form-label">Pitch of Roof (_/12)</label>
+                  <input type="text" class="form-control" id="pitch">
+                </div>
+                <div class="col-12">
+                  <label for="story" class="form-label"># of Stories</label>
+                  <select id="story" class="form-select">
+                    <option selected>1 Story</option>
+                    <option>2 Story</option>
+                    <option>3 Story</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Get Your Quote!</button>
+                </div>
+              </form>
         </div>
-        <!--<p>Hello World - Devon 3</p>
-        <p>Hellow World -Illia 2?</p>
-        <p>Hello World - Isaac</p>-->
     </body>
 </html>
