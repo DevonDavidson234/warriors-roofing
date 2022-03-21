@@ -31,10 +31,47 @@ document.getElementById("button").addEventListener("click", function(){
     }
 
     if(isValid1 && isValid2){
-        price(length.value, width.value, document.getElementById("pitch").value, document.getElementById("story").value);
+        price(+length.value, +width.value, document.getElementById("pitch").value, document.getElementById("story").value);
     }
 });
 
 function price(length, width, pitch, story){
+    var price = 0;
+    var charge = 0;
+    var sq = Math.ceil(((length * width)) / 100) + 1;
 
+    price += sq * 110;
+
+    price += Math.ceil(sq/2) * 20;
+
+    price += Math.ceil((length + 20) / 35) * 60;
+
+    price += Math.ceil(((length * 2) + 20) / 100) * 24;
+
+    price += (((length * 2) + (width * 2)) + 20) * 2;
+
+    price += Math.ceil((sq + 1) / 13) * 45;
+
+    price += (sq - 1) * 200;
+
+    price += Math.floor((sq - 1)/10) * 200;
+
+    if(pitch == "4/12 - 7/12"){
+        charge += 0.02;
+    }
+    else if(pitch == "8/12 - 10/12"){
+        charge += 0.03;
+    }
+    else if(pitch == "11/12 - 12/12"){
+        charge += 0.05;
+    }
+
+    if(story == "2 Story"){
+        charge += 0.02;
+    }
+    else if(story == "3 Story"){
+        charge += 0.04;
+    }
+
+    price += Math.ceil(price * charge);
 }
