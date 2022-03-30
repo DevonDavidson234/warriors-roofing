@@ -22,16 +22,16 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid border p-3" style="width: max-content; margin-top: 20em;">
+        <div class="container-fluid border p-3" style="width: max-content; margin-top: 20em;" id="container">
             <form class="row g-3">
                 <div class="col-md-6">
                   <label for="length" class="form-label">Length of Roof (ft.)</label>
-                  <input type="text" class="form-control" id="length">
+                  <input type="number" class="form-control" id="length">
                   <p id="desc1"></p>
                 </div>
                 <div class="col-md-6">
                   <label for="width" class="form-label">Width of Roof (ft.)</label>
-                  <input type="text" class="form-control" id="width">
+                  <input type="number" class="form-control" id="width">
                   <p id="desc2"></p>
                 </div>
                 <div class="col-12">
@@ -56,6 +56,7 @@
                 </div>
               </form>
         </div>
+        <p id="price"></p>
         <footer style="position: fixed; left: 0; right: 0; bottom: 0; background-color: darkred;">
           <div class="container-fluid">
               <div style="float: left; margin-right: 50%;">

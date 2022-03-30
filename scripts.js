@@ -37,8 +37,25 @@ document.getElementById("button").addEventListener("click", function(){
 
 function price(length, width, pitch, story){
     var price = 0;
-    var charge = 0;
+    var labor = 200;
     var sq = Math.ceil(((length * width)) / 100) + 1;
+
+    if(pitch == "4/12 - 7/12"){
+        labor += 5;
+    }
+    else if(pitch == "8/12 - 10/12"){
+        labor += 10;
+    }
+    else if(pitch == "11/12 - 12/12"){
+        labor += 20;
+    }
+
+    if(story == "2 Story"){
+        labor += 10;
+    }
+    else if(story == "3 Story"){
+        labor += 20;
+    }
 
     price += sq * 110;
 
@@ -52,26 +69,11 @@ function price(length, width, pitch, story){
 
     price += Math.ceil((sq + 1) / 13) * 45;
 
-    price += (sq - 1) * 200;
+    price += (sq - 1) * labor;
 
-    price += Math.floor((sq - 1)/10) * 200;
+    price += Math.floor((sq - 1)/10) * labor;
+    
 
-    if(pitch == "4/12 - 7/12"){
-        charge += 0.02;
-    }
-    else if(pitch == "8/12 - 10/12"){
-        charge += 0.03;
-    }
-    else if(pitch == "11/12 - 12/12"){
-        charge += 0.05;
-    }
-
-    if(story == "2 Story"){
-        charge += 0.02;
-    }
-    else if(story == "3 Story"){
-        charge += 0.04;
-    }
-
-    price += Math.ceil(price * charge);
+    document.getElementById("container").innerHTML = "<h1 id='display'></h1>";
+    document.getElementById("display").innerHTML = price;
 }
