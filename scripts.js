@@ -31,6 +31,7 @@ document.getElementById("button").addEventListener("click", function(){
     }
 
     if(isValid1 && isValid2){
+        alert("The following quote is just a minimum estimate. The price given is not necessarily what you might pay.");
         price(+length.value, +width.value, document.getElementById("pitch").value, document.getElementById("story").value);
     }
 });
@@ -74,4 +75,29 @@ function price(length, width, pitch, story){
     }
 
     price += Math.ceil(price * charge);
+    display(length, width, pitch, story, price);
+}
+
+function display(length, width, pitch, story, price) {
+    var nav = document.body.children[0];
+    var footer = document.body.children[2];
+    var body = document.createElement("body");
+    var para = document.createElement("p");
+    var linkBack = document.createElement("a");
+    if (story != "1 Story") {
+        para.textContent = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " stories it would cost (BAREST MINIMUM) $" + price;
+    } else {
+        para.textContent = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " story it would cost (BAREST MINIMUM) $" + price;
+    }
+    para.style.textAlign = "center";
+    para.style.paddingTop = "25%";
+    linkBack.textContent = "Go Back";
+    linkBack.href = "quote.html";
+    linkBack.style.textAlign = "center";
+    para.appendChild(document.createElement("br"));
+    para.appendChild(linkBack);
+    body.appendChild(nav);
+    body.appendChild(para);
+    body.appendChild(footer);
+    document.body = body;
 }
