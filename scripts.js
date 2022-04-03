@@ -79,25 +79,14 @@ function price(length, width, pitch, story){
 }
 
 function display(length, width, pitch, story, price) {
-    var nav = document.body.children[0];
-    var footer = document.body.children[2];
-    var body = document.createElement("body");
-    var para = document.createElement("p");
-    var linkBack = document.createElement("a");
+    document.getElementById("container").innerHTML = "<p id='description'></p> <h1 id='cost'></h1> <a href='quote.html'>Go Back</a>";
+    document.getElementById("container").classList = "container-fluid p-3 text-center";
+
     if (story != "1 Story") {
-        para.textContent = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " stories it would cost (BAREST MINIMUM) $" + price;
+        document.getElementById("description").innerHTML = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " stories it would cost (BAREST MINIMUM)";
     } else {
-        para.textContent = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " story it would cost (BAREST MINIMUM) $" + price;
+        document.getElementById("description").innerHTML = "For a length of " + length + "ft., a width of " + width + "ft., a pitch range of " + pitch + " and " + story[0] + " story it would cost (BAREST MINIMUM)";
     }
-    para.style.textAlign = "center";
-    para.style.paddingTop = "25%";
-    linkBack.textContent = "Go Back";
-    linkBack.href = "quote.html";
-    linkBack.style.textAlign = "center";
-    para.appendChild(document.createElement("br"));
-    para.appendChild(linkBack);
-    body.appendChild(nav);
-    body.appendChild(para);
-    body.appendChild(footer);
-    document.body = body;
+
+    document.getElementById("cost").innerHTML = "$" + price;
 }
