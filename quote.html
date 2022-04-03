@@ -1,63 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--Bootstrap connection-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Get A Quote</title>
-        <link rel="icon" href="images/roofinglogo.png">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkred;">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">
-                    <img src="images/roofinglogo.png" alt="Warriors Roofing" style="height: 50px;">
-                    
-                </a>
-                <div class="navbar-nav justify-content-end">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="index.html#contactInfo" class="nav-link">Contact Us</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="quote.html" class="nav-link active">Get A Quote</a>
-                </div>
-            </div>
-        </nav>
-        <div class="container-fluid border p-3" style="width: fit-content; margin-top: 20em;" id="container">
-            <form class="row g-3">
-                <div class="col-md-6">
-                  <label for="length" class="form-label">Length of Roof (ft.)</label>
-                  <input type="number" class="form-control" id="length">
-                  <p id="desc1"></p>
-                </div>
-                <div class="col-md-6">
-                  <label for="width" class="form-label">Width of Roof (ft.)</label>
-                  <input type="number" class="form-control" id="width">
-                  <p id="desc2"></p>
-                </div>
-                <div class="col-12">
-                  <label for="pitch" class="form-label">Pitch of Roof</label>
-                  <select id="pitch" class="form-select">
-                    <option selected>1/12 - 3/12</option>
-                    <option>4/12 - 7/12</option>
-                    <option>8/12 - 10/12</option>
-                    <option>11/12 - 12/12</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label for="story" class="form-label">Number of Stories</label>
-                  <select id="story" class="form-select">
-                    <option selected>1 Story</option>
-                    <option>2 Story</option>
-                    <option>3 Story</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <button type="button" class="btn btn-primary" id="button">Get Your Quote!</button>
-                </div>
-              </form>
-        </div>
-        <p id="price"></p>
-      <script src="scripts.js"></script>
-    </body>
+
+<head>
+  <!--Bootstrap connection-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get A Quote</title>
+  <link rel="icon" href="images/roofinglogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkred;">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/roofinglogo.png" alt="Warriors Roofing" style="height: 50px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contactInfo">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="quote.html">Get a Quote</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid border p-3" style="width: fit-content; margin-top: 20em;" id="container">
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="length" class="form-label">Length of Roof (ft.)</label>
+        <input type="number" class="form-control" id="length">
+        <p id="desc1"></p>
+      </div>
+      <div class="col-md-6">
+        <label for="width" class="form-label">Width of Roof (ft.)</label>
+        <input type="number" class="form-control" id="width">
+        <p id="desc2"></p>
+      </div>
+      <div class="col-12">
+        <label for="pitch" class="form-label">Pitch of Roof</label>
+        <select id="pitch" class="form-select">
+          <option selected>1/12 - 3/12</option>
+          <option>4/12 - 7/12</option>
+          <option>8/12 - 10/12</option>
+          <option>11/12 - 12/12</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="story" class="form-label">Number of Stories</label>
+        <select id="story" class="form-select">
+          <option selected>1 Story</option>
+          <option>2 Story</option>
+          <option>3 Story</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="button" class="btn btn-primary" id="button">Get Your Quote!</button>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <script src="scripts.js"></script>
+</body>
+
 </html>
