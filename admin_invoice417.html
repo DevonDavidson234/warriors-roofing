@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/roofinglogo.png">
+    <title>Invoice Generator</title>
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td {
+            width: 30%;
+            text-align: center;
+        }
+        @media screen and (max-width: 500px) {
+            input {
+                width:101.5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="get">
+        <h3 style="text-align: center;">Enter the cost of:</h3>
+        <table>
+            <tr>
+                <td><label for="shingles">Shingles</label></td>
+                <td><label for="felt">Felt Paper</label></td>
+            </tr>
+            <tr>
+                <td>$<input type="number" name="shingles" id="shingles"></td>
+                <td>$<input type="number" name="felt" id="felt"></td>
+            </tr>
+            <tr style="height: 3em; vertical-align: bottom;">
+                <td><label for="ridgecap">The Ridge Cap</label></td>
+                <td><label for="starter">Starter Shingles</label></td>
+            </tr>
+            <tr>
+                <td>$<input type="number" name="ridgecap" id="ridgecap"></td>
+                <td>$<input type="number" name="starter" id="starter"></td>
+            </tr>
+            <tr style="height: 3em; vertical-align:bottom;">
+                <td><label for="nails">Nails</label></td>
+                <td><label for="dripedge">Drip Edge</label></td>
+            </tr>
+            <tr>
+                <td>$<input type="number" name="nails" id="nails"></td>
+                <td>$<input type="number" name="dripedge" id="dripedge"></td>
+            </tr>
+            <tr style="height: 3em; vertical-align: bottom;">
+                <td colspan="2"><label for="labor">Labor</label><span style="margin-right: .5cm;"></span>$<input type="number" name="labor" id="labor"></td>
+            </tr>
+        </table>
+        <h3 style="text-align: center; margin-top: 5em;">Enter the price adjustment for:</h3>
+        <table>
+            <tr>
+                <td><label for="pitch">Pitch</label></td>
+                <td><label for="story">Stories</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="pitch" id="pitch">%</td>
+                <td><input type="number" name="story" id="story">%</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
