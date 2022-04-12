@@ -53,8 +53,11 @@
             <tr style="height: 3em; vertical-align: bottom;">
                 <td colspan="2"><label for="labor">Labor</label><span style="margin-right: .5cm;"></span>$<input type="number" name="labor" id="labor"></td>
             </tr>
+            <tr style="height: 5em; vertical-align: bottom;">
+                <td colspan="2"><button type="submit" id="btnSubmit">Submit</button></td>
+            </tr>
         </table>
-        <h3 style="text-align: center; margin-top: 5em;">Enter the price adjustment for:</h3>
+        <!--<h3 style="text-align: center; margin-top: 5em;">Enter the price adjustment for:</h3>
         <table>
             <tr>
                 <td><label for="pitch">Pitch</label></td>
@@ -64,7 +67,49 @@
                 <td><input type="number" name="pitch" id="pitch">%</td>
                 <td><input type="number" name="story" id="story">%</td>
             </tr>
-        </table>
+            <tr style="height: 5em; vertical-align: bottom;">
+                <td colspan="2"><button type="submit" id="btnSubmit">Submit</button></td>
+            </tr>
+        </table>-->
     </form>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", function () {
+            let labels = document.getElementsByTagName("label");
+            let inputs = document.getElementsByTagName("input");
+            let bod = document.createElement("code");
+            let table = document.createElement("table");
+            let total = 0;
+            let tr;
+            let td;
+            for (let i = 0; i < labels.length; i++) {
+                tr = document.createElement("tr");
+                td = document.createElement("td");
+                td.style.textAlign = "left";
+                td.innerText = labels[i].innerText;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.style.textAlign = "right";
+                //if (i < labels.length - 2) {
+                    td.innerText = inputs[i].value + "$";
+                    total += +inputs[i].value;
+                //} else {
+                    //td.innerText = inputs[i].value + "%";
+                    //total += total * (+inputs[i].value / 100);
+                    //if (i == labels.length - 2) {
+                        //tr.style.height = "4em";
+                        //tr.style.verticalAlign = "bottom";
+                    //}
+                //}
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            bod.appendChild(table);
+            document.body = document.createElement("body");
+            document.body.appendChild(bod);
+            var totalDisplay = document.createElement("p");
+            totalDisplay.innerText = total.toFixed(2);
+            document.body.appendChild(totalDisplay);
+        });
+    </script>
 </body>
 </html>
