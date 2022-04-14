@@ -1,10 +1,13 @@
+body{
+    margin-bottom: 10em;
+}
+
 .footer-text {
     color: white;
 }
 
 #contactInfo {
     margin-top: 30em; 
-    margin-bottom: 30em;
 }
 
 #navBar{
