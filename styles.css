@@ -13,3 +13,28 @@ body{
 #navBar{
     background-color: darkred;
 }
+
+#imageCarouselContainer{
+    width: 65%;
+}
+
+#logoImg{
+    height: 50px;
+}
+
+#homePageTxtContainer{
+    margin-top: 20em;
+}
+
+#aboutContainer{
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+#quoteContainer{
+    width: fit-content;
+}
+
+#warning{
+    color: red
+}
