@@ -37,7 +37,7 @@ document.getElementById("button").addEventListener("click", function () {
 
 function price(length, width, pitch, story) {
     var price = 0;
-    var labor = 200;
+    var labor = 150;
     var sq = Math.ceil(((length * width)) / 100) + 1;
 
     if (pitch == "4/12 - 7/12") {
