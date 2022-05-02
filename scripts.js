@@ -1,3 +1,5 @@
+//Authors: Illia Bondar, Devon Davidson, Isaac Stomboly
+
 //Listens for button click
 document.getElementById("button").addEventListener("click", function () {
     //Initialize variables
